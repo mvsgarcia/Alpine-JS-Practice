@@ -2,7 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css"> <!-- para di na need initialize ang tailwind -->
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script> <!-- alpine js cdn -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script> <!-- latest alpine js cdn -->
 </head>
 
 <body class="text-gray-800 bg-gray-300">
@@ -31,17 +31,20 @@
 
                 <!-- dropdown menu -->
                 <ul
-                    x-show="isOpen"
+                    x-show.transition.in.duration.200ms.opacity.scale.25.origin.top.right.out.duration.200ms.opacity.scale.25.origin.top.right="isOpen"
                     @click.away = "isOpen = false"
-                    class="absolute right-0 z-20 w-48 py-1 mt-2 overflow-hidden font-normal bg-white border rounded shadow"
-
+                    class="absolute right-0 z-20 w-48 py-1 mt-2 overflow-hidden font-normal bg-white border rounded shadow"> 
+                    
+                    <!--
                     x-transition:enter="transition transform origin-top-right ease-out duration-200"
                     x-transition:enter-start="opacity-0 scale-75"
                     x-transition:enter-end="opacity-100 scale-100"
                     x-transition:leave="transition transform origin-top-right ease-out duration-200"
                     x-transition:leave-start="opacity-100 scale-100"
-                    x-transition:leave-end="opacity-0 scale-75"> 
-                    
+                    x-transition:leave-end="opacity-0 scale-75"
+                    -->
+
+
                     <!-- @click.away="isOpen = false" - click sa labas para mawala yung dropdown -->
 
                     <li>
